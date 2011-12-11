@@ -1,8 +1,10 @@
-# Description
+# Scrabble Solver
+
+## Description
 
 A simple anagram finder for use in games like Scrabble.
 
-# Sample Usage
+## Sample Usage
 
 From the command line, run:
 
