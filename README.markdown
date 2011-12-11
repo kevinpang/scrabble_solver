@@ -1,11 +1,26 @@
-# Scrabble Solver
+# Description
 
-## Description
+A simple anagram finder.
 
-A simple anagram finder for use in games like Scrabble.
+# Sample Usage
 
-## Sample Usage
+	$ python scrabble_solver.py
+	Loaded dictionary in 4.14383506775 seconds
+	Enter in your letters (use * for wildcards): ant
+	an
+	at
+	na
+	ta
+	ant
+	nat
+	tan
+	Found 7 anagrams in 7 seconds
 
-From the command line, run:
-
-	python scrabble_solver.py
+	Enter in your letters (use * for wildcards): an*
+	an
+	aa
+	...
+	za
+	zan
+	Found 146 anagrams in 146 seconds
+	
