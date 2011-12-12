@@ -70,12 +70,12 @@ def main():
 			print i, 'letter words:'
 		
 			for anagram in find_anagrams(letters, dictionary, i):
-				print anagram, '\t',
+				print anagram,
 				count += 1
 				
 			print '\n'
 				
-		print 'Found {0} anagrams in {0} seconds'.format(count, time() - t)	
+		print 'Found {0} anagrams in {1} seconds'.format(count, time() - t)	
 	
 if __name__ == '__main__':
 	main()
