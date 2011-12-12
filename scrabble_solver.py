@@ -43,18 +43,17 @@ def build_dictionary():
 	finally:
 		words_file.close()
 		
-def find_anagrams(letters, dictionary):
+def find_anagrams(letters, dictionary, length):
 	if letters.find('*') > 0:
 		for letter in ascii_lowercase:
-			for anagram in find_anagrams(letters.replace('*', letter, 1), dictionary):
+			for anagram in find_anagrams(letters.replace('*', letter, 1), dictionary, length):
 				yield anagram
 	else:
-		for i in range(2, len(letters) + 1):
-			for permutation in permutations(letters, i):
-				word = ''.join(permutation)
-			
-				if dictionary.find(word):
-					yield word
+		for permutation in permutations(letters, length):
+			word = ''.join(permutation)
+		
+			if dictionary.find(word):
+				yield word
 	
 def main():
 	t = time()
@@ -66,10 +65,16 @@ def main():
 
 		count = 0
 		t = time()
-		for anagram in find_anagrams(letters, dictionary):
-			print anagram
-			count += 1
-
+		
+		for i in range(2, len(letters) + 1):
+			print i, 'letter words:'
+		
+			for anagram in find_anagrams(letters, dictionary, i):
+				print anagram, '\t',
+				count += 1
+				
+			print '\n'
+				
 		print 'Found {0} anagrams in {0} seconds'.format(count, time() - t)	
 	
 if __name__ == '__main__':
